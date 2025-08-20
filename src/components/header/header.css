@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header_container{
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_profile img{
+    height: 75px;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.header_logo img{
+    border-radius: 50px;
+    height: 75px;
+}

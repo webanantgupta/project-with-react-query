@@ -1,0 +1,83 @@
+.login_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #BBD2C5;
+    height: 100vh;
+}
+
+.login_card {
+    background-color: white;
+    height: 450px;
+    width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+h1 {
+    text-align: center;
+    font-weight: 800;
+    color: #52c234;
+}
+
+.input_group input {
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 25px;
+    width: 90%;
+    height: 40px;
+    background-color: #BBD2C5;
+}
+
+.input_group input::placeholder {
+    color: black;
+}
+
+.input_group svg {
+    height: 30px;
+    width: 30px;
+}
+
+.input_group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+
+.form_container1 button {
+    display: block;
+    padding: 10px 15px;
+    width: 70%;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: larger;
+    margin: auto;
+    margin-top: 25px;
+    background-color: #52c234;
+    font-weight: bolder;
+    color: white;
+}
+
+
+
+.form_container1 span {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    color: blue;
+    cursor: pointer;
+
+}
+
+
+.error_info1 {
+    color: red;
+    margin-left: 50px;
+}

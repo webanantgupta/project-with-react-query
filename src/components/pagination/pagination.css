@@ -1,0 +1,26 @@
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #BBD2C5;
+}
+
+
+.pagination span{
+    padding: 15px 20px;
+    border: 1px solid black;
+    /* background-color: #d9eaf8; */
+    cursor: pointer;
+    border-radius: 15px;
+    gap: 10px;
+}
+
+
+.clicked{
+    background-color: #84f764;
+}
+
+.button_disable{
+    opacity: 0;
+}
