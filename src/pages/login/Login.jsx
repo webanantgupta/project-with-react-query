@@ -4,6 +4,7 @@ import { Validation } from './Validation'
 import { useNavigate } from 'react-router-dom'
 import { FaCircleUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -27,11 +28,16 @@ console.log(storedUsers);
   );
 
   if(userLogin){
-    alert("Welcome!");
+    toast.success("Login successfull")
+    // alert("Welcome!");
+    setTimeout(()=>{
     navigate("/home");
+
+    },1000)
   } else {
-    alert("User does not exist");
-    navigate("/signup")
+    toast.error("User does not exist");
+    // alert("User does not exist");
+   
   }
 }
 })
