@@ -23,21 +23,25 @@ const Signup = () => {
     initialValues: initialValues,
     validationSchema: SignupValidation,
     onSubmit: (values) => {
-
+       
       const existingUsers = JSON.parse(localStorage.getItem("signupData")) || [];
 
-const newUser = {
-  ...values,
-  id: Math.round(Math.random()*100),
-}
-console.log(newUser);
-
+      const newUser = {
+        ...values,
+        id: Math.round(Math.random() * 1000),
+      }
+      console.log(newUser);
 
 
       existingUsers.push(newUser);
 
 
       localStorage.setItem("signupData", JSON.stringify(existingUsers));
+
+      localStorage.setItem("uniqueUser",JSON.stringify(newUser));
+      console.log(newUser);
+      
+
       toast.success("Signup successful");
       // alert("Signup successful!");
       setTimeout(() => {

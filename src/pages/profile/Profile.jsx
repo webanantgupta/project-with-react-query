@@ -2,11 +2,52 @@ import './profile.css'
 import { FaUserAlt } from "react-icons/fa";
 import { BiSolidMessageRounded } from "react-icons/bi";
 import { VscDebugDisconnect } from "react-icons/vsc";
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Profile = () => {
 
-  const loginUser = JSON.parse(localStorage.getItem("signupData")) || [];
-  console.log(loginUser);
+  const [user, setUser] = useState({});
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const loginUser = JSON.parse(localStorage.getItem("uniqueUser")) || {};
+    console.log(loginUser);
+    setUser(loginUser);
+
+  }, []);
+
+  const handleLogout = (userData) => {
+    console.log(userData);
+    localStorage.removeItem("uniqueUser");
+    navigate("/")
+
+  }
+
+  const showPassword = (userData) => {
+    console.log(userData);
+    navigate("/showpass")
+  }
+
+
+  let currentDate = new Date();
+  let date = "Date: " + currentDate.getDay() + "/" + currentDate.getMonth() + "/" + currentDate.getFullYear();
+  let time = "Time: " + currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+  // console.log(currentDate);
+  // console.log(date);
+  // console.log(time);
+
+  useEffect(()=>{
+toast(
+  "Good to see you,\n\n💖 Your dashboard is ready!",
+  {
+    duration: 2000,
+  }
+);
+  },[]);
+
+
 
   return (
     <div className='profile_container'>
@@ -24,17 +65,39 @@ const Profile = () => {
             <div id='inner_message'>Message</div>
           </div>
         </div>
-          <hr />
-          <div className='profile_info'>
-            <span>Name:</span><br />
-            <span>Email:</span><br />
-            <span>
-            <button className='btn'>See Password</button>
-            </span>
-            <span>
-            <button className='btn'>Change Password</button>
-            </span>
+        <hr />
+        <div className='profile_info'>
+          <div className='date'>
+            <div>{date}</div>
+            <div>{time}</div>
           </div>
+
+
+          <div className='heading1'>
+            <h4>Name: </h4><p>{user.name}</p>
+          </div>
+          <div className='heading1'>
+            <h4>Email:</h4> <p><u>{user.email}</u></p>
+
+          </div>
+
+          <div className='btn_container'>
+            <button
+              className='btn'
+              onClick={() => showPassword(user)}
+            >See Password</button>
+
+
+            <button className='btn'>Change Password</button>
+
+            <button
+              className='btn_red'
+              onClick={() => handleLogout(user)}
+            >Log Out</button>
+          </div>
+
+
+        </div>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
-import { useFormik } from 'formik'
-import './login.css'
-import { Validation } from './Validation'
-import { useNavigate } from 'react-router-dom'
+import { useFormik } from 'formik';
+import './login.css';
+import { Validation } from './Validation';
+import { useNavigate } from 'react-router-dom';
 import { FaCircleUser } from "react-icons/fa6";
 import { FaLock } from "react-icons/fa";
 import toast from "react-hot-toast";
@@ -22,6 +22,16 @@ const {values,handleSubmit,handleBlur,handleChange,errors,touched} = useFormik({
 onSubmit: (values) => {
   const storedUsers = JSON.parse(localStorage.getItem("signupData")) || [];
 console.log(storedUsers);
+
+const userFound = storedUsers.find((obj)=>{
+  return  obj.name === values.name && obj.password === values.password;
+})
+
+// we are setting data again
+localStorage.setItem("uniqueUser", JSON.stringify(userFound));
+console.log(userFound);
+
+
 
   const userLogin = storedUsers.some(
     (obj) => obj.name === values.name && obj.password === values.password

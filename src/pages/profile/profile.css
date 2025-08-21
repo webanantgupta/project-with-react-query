@@ -28,6 +28,7 @@
     background-color: aliceblue;
     padding: 10px;
     border-radius: 40px;
+    cursor: pointer;
 }
 
 .message{
@@ -75,16 +76,6 @@
     margin-top: 50px;
 }
 
-.profile_info span{
-    display: inline-block;
-margin-left: 50px;
-margin-top: 20px;
-margin-bottom: 20px;
-font-size: larger;
-font-weight: 600;
-color: grey;
-}
-
 
 .btn{
     padding: 15px 20px;
@@ -96,3 +87,49 @@ color: grey;
     color: white;
 }
 
+.btn_red{
+     padding: 15px 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: #dd1818;
+    cursor: pointer;
+    font-size: large;
+    color: white;
+}
+
+.btn_container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 75px;
+}
+
+.heading1{
+    display: flex;
+    margin-top: 20px;
+    margin-left: 100px;
+    align-items: center;
+}
+
+.heading1 p{
+    margin-left: 25px;
+}
+
+
+.profile_info h4{
+    font-size: larger;
+    color: grey;
+}
+
+
+.date{
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+
+.date div{
+    font-family: Verdana;
+}
