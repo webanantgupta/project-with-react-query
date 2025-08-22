@@ -5,7 +5,8 @@ import Signup from "../pages/signup/Signup";
 import Profile from "../pages/profile/Profile";
 import Card from "../pages/card/Card";
 import {Toaster} from "react-hot-toast";
-import Showpassword from "../pages/showpassword/Showpassword";
+import Error from "../pages/error/Error"
+import Changepass from "../pages/changepassword/Changepass";
 
 
 
@@ -20,7 +21,7 @@ const AppRoutes = ({posts, page, setPage}) => {
         <Route path="/profile" element={<Profile/>}/>
         <Route path='/home' element={<Card posts={posts} page={page} setPage={setPage}/>}/>
         <Route path="*" element={<Error/>}/>
-        <Route  path="/showpass" element={<Showpassword/>}/>
+        <Route path="/changepass" element={<Changepass/>}/>
       </Routes>
       </BrowserRouter>
     </div>

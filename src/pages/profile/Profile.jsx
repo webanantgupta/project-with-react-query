@@ -25,10 +25,10 @@ const Profile = () => {
 
   }
 
-  const showPassword = (userData) => {
-    console.log(userData);
-    navigate("/showpass")
-  }
+  // const showPassword = (userData) => {
+  //   console.log(userData);
+  //   navigate("/showpass")
+  // }
 
 
   let currentDate = new Date();
@@ -40,7 +40,7 @@ const Profile = () => {
 
   useEffect(()=>{
 toast(
-  "Good to see you,\n\n💖 Your dashboard is ready!",
+  "Good to see you,\n\n💖 Here is your profile!",
   {
     duration: 2000,
   }
@@ -82,13 +82,16 @@ toast(
           </div>
 
           <div className='btn_container'>
-            <button
+            {/* <button
               className='btn'
               onClick={() => showPassword(user)}
-            >See Password</button>
+            >See Password</button> */}
 
 
-            <button className='btn'>Change Password</button>
+            <button 
+            className='btn'
+            onClick={()=>{navigate("/changepass")}}
+            >Change Password</button>
 
             <button
               className='btn_red'
